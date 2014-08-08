@@ -1,6 +1,6 @@
 {
   "name": "organic-software-development-101",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "presentation of node-organic",
   "scripts": {
     "test": "grunt test",
