@@ -141,7 +141,7 @@ module.exports = function(grunt) {
 		var fs = require('fs');
 		var shell = require('shelljs');
 		var version = grunt.file.readJSON('package.json').version;
-		var cmd = "git checkout gh-pages; unzip reveal-js-presentation.zip -d ./; git add --all; git commit -am 'release "+version+"'; git push; git checkout master";
+		var cmd = "git checkout gh-pages; unzip -o reveal-js-presentation.zip -d ./; git add --all; git commit -am 'release "+version+"'; git push; git checkout master";
 		console.log(cmd);
 		shell.exec(cmd, function(code, stderr, stdout){
 			if(code === 0)
