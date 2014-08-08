@@ -137,12 +137,20 @@ module.exports = function(grunt) {
 	// Run tests
 	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
 
-	grunt.registerTask( 'publish', "git releases and publishes to gh-pages branch", function(){
-		grunt.task.run(['jshint', 'release', 'package'], function(){
-			var shell = require('shelljs');
-			var version = require("package.json").version;
-			shell.exec("git checkout gh-pages; unzip reveal-js-presentation.zip -d ./; git add --all; git commit -am 'release "+version+"'; git push; git checkout master");
+	grunt.registerTask('deploy-to-gh-pages', "unzips a packaged version of presentation and commits it to gh-pages",function(){
+		var fs = require('fs');
+		var shell = require('shelljs');
+		var version = grunt.file.readJSON('package.json').version;
+		var cmd = "git checkout gh-pages; unzip reveal-js-presentation.zip -d ./; git add --all; git commit -am 'release "+version+"'; git push; git checkout master";
+		console.log(cmd);
+		shell.exec(cmd, function(code, stderr, stdout){
+			if(code === 0)
+				grunt.log.ok("done");
+			else
+				grunt.log.error(stderr, stdout);
 		});
 	});
+
+	grunt.registerTask( 'publish', ['package', 'deploy-to-gh-pages']);
 
 };
