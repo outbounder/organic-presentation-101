@@ -1,0 +1,9 @@
+.reveal blockquote {
+  font-style: normal;
+}
+
+.reveal .box {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border: 2px solid grey;
+}

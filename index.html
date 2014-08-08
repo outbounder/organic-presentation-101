@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>organic development</title>
+
+    <meta name="description" content="organic software development">
+    <meta name="author" content="Boris Filipov">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+    <link rel="stylesheet" href="css/customizations.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Organic Development</h1>
+          <h3>w/ javascript</h3>
+        </section>
+
+        <section>         
+          <img width="280" height="226" src="img/waw.gif">
+        </section>
+
+        <section>
+          <h2>Basement Level 1</h2>
+          <p>organic software development concept and history</p>
+        </section>
+
+        <section>
+          <section>
+            <h2> The 'Concept' </h2>
+          </section>
+          <section> 
+            <h3> Organic Computing </h3>
+            <p>
+              <blockquote cite="http://en.wikipedia.org/wiki/Organic_computing">
+                &ldquo;Organic computing is a form of biologically-inspired computing with organic properties.&rdquo;
+              </blockquote>
+              <small><a href="http://en.wikipedia.org/wiki/Organic_computing">Wikipedia: Organic computing</a></small>
+            </p>
+          </section>
+          <section>
+            <h3> Organic Computing </h3>
+            <blockquote cite="http://www.organic-computing.de/">
+              &ldquo;Organic computer systems consist of autonomous and cooperating subsystems, they function – as far as possible – self-organizing. Self-organization is based on adaptive and context-sensitive behavior. &rdquo;
+            </blockquote>
+            <small><a href="http://www.organic-computing.de/">organic-computing.de</a></small>
+          </section>
+          <section>
+            <h3> Organic properties </h3>
+            <blockquote cite="http://www.organic-computing.de/">
+              <p>Organic Computer (OC) systems have so called self-x properties like:</p>
+              <ul>
+                <li>Self-configuration</li>
+                <li>Self-optimization</li>
+                <li>Self-protection</li>
+                <li>Self-reflection</li>
+              </ul>
+            </blockquote>
+            <small><a href="http://www.organic-computing.de/">organic-computing.de</a></small>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2> The 'History' </h2>
+          </section>
+          <section>
+            <ul>
+              <li> observed since the 1960ies </li>
+              <li> ...? </li>
+              <li> Jun, 2004 - Ercatons: Thing-oriented Programming </li>
+              <li> ...? </li>
+              <li> Jul, 2012 - node-organic @ Varnalab </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Basement Level 2</h2>
+          <h1>node-organic</h1>
+          <a class="test" href="http://cornify.com">
+            <img width="280" height="326" src="img/cornify.gif" alt="Unicorn">
+          </a>
+        </section>
+
+        <section>
+          <section>
+            <h2>Where IT meets Biology</h2>
+            <p> a simplified analogy with existing concepts </p>
+          </section>
+          <section>
+            <div class="box">
+              <h2>Configuration</h2>
+              <p> == </p>
+              <h2> DNA </h2>
+              <pre><code class="javascript">
+                var DNA = {
+                  "branch": {
+                    "branch": {
+                      "property": "value"
+                    }
+                  }
+                }
+              </code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>Data Structure</h2>
+            <p> == </p>
+            <h2> Chemical </h2>
+            <pre><code class="javascript">
+              var ChemicalX = {
+                  type: "ChemicalX",
+                  xpower: 100,
+                  target: Object
+              }
+            </code></pre>
+          </section>
+          <section>
+            <h2>Event Bus</h2>
+            <p> == </p>
+            <h2> Plasma </h2>
+            <pre><code class="javascript">
+              plasma.on("myEvent", function(c){
+                console.log(c.type) // ChemicalX
+                console.log(c.xpower) // 100
+              })
+              plasma.emit({type: "myNewEvent"})
+              plasma.emit("myEvent") // same as {type: "myEvent"}
+              
+              plasma.emit(new Error("an error chemical with message"))
+              plasma.on(Error, function(err){
+                console.log(err) // "Error: an error chemical with message"
+              })
+            </code></pre>
+          </section>
+          <section>
+            <h2>Controller</h2>
+            <p> == </p>
+            <h2> Organelle </h2>
+            <pre>
+              <code class="javascript">
+                var Organelle = function(plasma, dna) {
+                  this.doSomething = function(){}
+                }
+                var ctrl = new Organelle(plasma, dna)
+                ctrl.doSomething()
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Application</h2>
+            <p> == </p>
+            <h2> Cell </h2>
+            <pre><code class="javascript">
+              var Cell = function(){
+                this.start = function(){
+                  var dna = new DNA()
+                  var plasma = new Plasma()
+                  var nucleus = new Nucleus(plasma, dna)
+                  plasma.on("build", function(c, next){
+                    nucleus.build(c, next)
+                  })
+                  dna.loadDir("dna", function(){
+                    plasma.emit({type: "build", branch: "main"})
+                  })
+                }
+              }
+              var app = new Cell()
+              app.start()
+            </code></pre>
+          </section>
+          <section>
+            <img width="590" height="787" src="img/organic-cell.png" alt="organic application overview">
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>DNA</h2>
+            <pre><code class="javascript">
+              var dna = new DNA()
+              dna.loadDir("dna", function(){
+                foldAndMerge(dna, "branch-name")
+                transform(dna)
+
+                var value = dna.selectBranch("branch-name.object.property")
+              })
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <li> a class </li>
+              <li> a data structure </li>
+            </ul>
+          </section>
+          <section>
+            <h3>DNA bellow the fold*</h3>
+            <ul>
+              <li> dynamic runtime configuration </li>
+              <li> the predefined knowledge of a system </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Plasma</h2>
+            <pre><code class="javascript">
+              var plasma = new Plasma()
+              plasma.on("Chemical1", function(){})
+              plasma.once(["Chemical1", "2"], function(){})
+              plasma.emit({type: "Chemical1", data: {}})
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <li> a class </li>
+              <li> publisher/subscriber, observer pattern </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Plasma bellow the fold*</h3>
+            <ul>
+              <li>medium for communication</li>
+              <li>inner system environment</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Organelle</h2>
+            <pre><code class="javascript">
+              var MyOrganelle = function(plasma, dna){
+                // ... plasma.on , dna.property, ...
+              }
+
+              var my_organele_instance = new MyOrganelle(plasma, dna)
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <li> a class </li>
+              <li> controller, actor, command and strategy pattern </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Organelle bellow the fold*</h3>
+            <ul>
+              <li>worker doing one thing only</li>
+              <li>a reaction</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Nucleus</h2>
+            <pre><code class="javascript">
+              var nucleus = new Nucleus(plasma, dna)
+
+              nucleus.build({
+                "branch": "root.based.dna.branch.name"
+              })
+              
+              nucleus.buildOne({
+                "source": "path/to/organelle/module",
+                "organelle-dna": {}
+              })
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <li>a class</li>
+              <li>a organelle</li>
+              <li>dependency injection, builder, factory pattern</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Nucleus bellow the fold*</h3>
+            <ul>
+              <li>has access to all knowledge contained in dna</li>
+              <li>is just yet another organelle :)</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Cell</h2>
+            <pre><code class="javascript">
+              var Cell = function(){
+              }
+
+              Cell.prototype.start = function(){
+                // load dna
+                // construct organelles
+                // ...
+              }
+
+              Cell.prototype.stop = function(){
+                // dispose and destroy organelles
+              }
+
+              var cell_instance = new Cell()
+              cell_instance.start()
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <li> a class </li>
+              <li> composition, dependency injection, initializer* pattern </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Cell bellow the fold*</h3>
+            <ul>
+              <li>worker doing one thing only</li>
+              <li>a building block for large systems</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Stellar Links</h2>
+          <ul>
+            <li><a href="https://github.com/VarnaLab/node-organic">https://github.com/VarnaLab/node-organic</a></li>
+            <li><a href="http://wisdom.camplight.net/wisdom/51194d8ca672da1148000007/ecosystem">node-organic ecosystem</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Even more Links</h2>
+          <ul>
+            <li><a href="http://www.living-pages.de/pub/downloads/ercatons-wp.pdf">"White Paper / Ercatons: Thing-oriented Programming"</a></li>
+            <li><a href="http://www.living-pages.de/pub/downloads/wjax06.pdf">"Ercatons und Organisches Programmieren mit Java & XML: Planwirtschaft adé"</a></li>
+            <li><a href="http://www.dls.ym.edu.tw/lesson/ym-10-2.pdf">Life, cell and chemical reactions</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <p>
+            Special thanks to <a href="http://hakim.se">Hakim El Hattab</a> for the presentation framework
+          </p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+            hljs.initHighlightingOnLoad(); 
+          } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
