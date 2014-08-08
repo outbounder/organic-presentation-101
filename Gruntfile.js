@@ -70,7 +70,8 @@ module.exports = function(grunt) {
 					head: false,
 					module: false,
 					console: false,
-					unescape: false
+					unescape: false,
+					require: false
 				}
 			},
 			files: [ 'Gruntfile.js', 'js/reveal.js' ]
@@ -138,8 +139,8 @@ module.exports = function(grunt) {
 
 	grunt.registerTask( 'publish', ['git-release', 'package', function(){
 		var shell = require('shelljs');
-		var version = require("package.json").version
-		shell.exec("git checkout gh-pages; unzip reveal-js-presentation.zip ./; git add --all; git commit -am 'release "+version+"'; git push; git checkout master")
-	}])
+		var version = require("package.json").version;
+		shell.exec("git checkout gh-pages; unzip reveal-js-presentation.zip ./; git add --all; git commit -am 'release "+version+"'; git push; git checkout master");
+	}]);
 
 };
